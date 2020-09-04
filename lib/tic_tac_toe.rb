@@ -112,34 +112,13 @@ def winner(board)
   end
 end
 
-# rspec spec/02_play_spec.rb
-
 def play(board)
-  input = gets
-  user_move = 0 
-  until over?(board)
-    turn(board)
+  turn(board) until over?(board)
+    if won?(board)
+      puts "Congratulations #{winner(board)}!"
+    else
+      puts "Cat's Game!"
   end
-  # if over?(board) == false
-  #   turn(board)
-  # else
-  #   play(board)
-  # end
-  # user_move = 0
-  # loop do
-  #   user_move += 1
-  #   turn(board)
-  #   if over?(board)
-  #     break
-  #   else
-  #     play(board)
-  #   end
-  # end
-  # if won?(board)
-  #   puts "Congratulations #{winner(board)}!"
-  # else
-  #   puts "Cat's Game!"
-  # end
 end
 
 
